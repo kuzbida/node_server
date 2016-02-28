@@ -3,8 +3,7 @@ var http = require('http'),
 
 var server = new http.Server(function (req, res) {
     var urlParsed = url.parse(req.url, true);
-    console.log(req.headers);
-
+    debugger;
     if(urlParsed.pathname === '/echo' && urlParsed.query.message){
         res.end(urlParsed.query.message)
     } else {
