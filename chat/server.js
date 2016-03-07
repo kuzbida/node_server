@@ -5,7 +5,7 @@ var http = require('http'),
 http.createServer(function (req, res) {
     switch (req.url) {
         case '/':
-            sendFile("index.html", res);
+            sendFile("chat/index.html", res);
             break;
 
         case '/subscribe':
@@ -23,7 +23,7 @@ http.createServer(function (req, res) {
                     }
 
                     if(body.length > 1e4){
-                        res.statusCode = 404;
+                        res.statusCode = 413;
                         res.end("Fuck you");
                     }
                 })
